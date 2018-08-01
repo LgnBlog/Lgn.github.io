@@ -76,23 +76,24 @@ li strong{
 	line-height: 90px;
     top: 200px;
     z-index: 100;
+    display: none;
 }
 .but2{
-	left: 818px;
+	left: 93%;
 }
 #tabs{
-	position: absolute;
-	top: 440px;
-	left: 350px;
+	position:absolute;
+    left:40%;
+    margin-top:50%;
 }
 .tab{
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
 	background-color: #5388e8;
 	float: left;
 	margin-left: 10px;
 	text-align: center;
-	line-height: 30px;
+	line-height: 20px;
 	border-radius: 100%;/*使得图标变成圆形*/
 	cursor: pointer;/*使得鼠标放上去之后是一个手形状*/
 }
