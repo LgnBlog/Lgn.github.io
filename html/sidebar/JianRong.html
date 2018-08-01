@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+        <link rel="icon" href="../../img/1title.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<title>LgnBlog</title>
+	</head>
+
+	<body>
+		<div id="box2">
+			<div id="head">
+				<h1>浏览器兼容问题</h1>
+			</div>
+			<div id="content">
+				<div class="container">
+					<div class="col-md-12 column">
+						<blockquote>
+							<p>
+								<strong>前言：</strong>什么是浏览器兼容问题？同一份代码，有的浏览器效果正常，有的不正常。其实最主要就是对 IE 浏览器的兼容问题。可以大致分为：
+								</br>A 级兼容(chrome、firefox、IE9+)：要保证在最新浏览器上完美实现设计稿；<br /> B 级兼容(ie8)：能用且差别不大；<br /> C 级兼容(ie7 以下)：能用。
+							</p>
+						</blockquote>
+						<h3>一、处理兼容问题的思路</h3>
+						<div>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先以最大程度完善设计稿为基础，再考虑兼容性，不能盲目为了兼容问题而弃用方便简洁的新方法（如 html5、css3）；当然也不能用过新的技术方法使得兼容性过于低、实用性差。
+						</div>
+						<br />
+						<div>
+							💡渐进增强和优雅降级：
+							<br /> -- 渐进增强(progressive enhancement)：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验
+							<br /> -- 优雅降级 (graceful degradation)：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。
+							<br /><br /> 💡区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。
+							<br /><br /> ① 要不要做？
+							<br /> -- 产品的角度（产品的受众、受众的浏览器比例、效果优先还是基本功能优先）
+							<br /> -- 成本的角度 (有无必要做某件事)
+							<br /><br /> ② 做到什么程度？
+							<br /> -- 让哪些浏览器支持哪些效果
+							<br /><br /> ③ 如何做？
+							<br /> （现阶段的前端工作，90%都不需要去管 IE8 以下的兼容问题，工作重心最主要还是集中在 JS ，对于浏览器兼容不需要花太多精力，理解相关的解决思路就好了。）<br/> -- 根据兼容需求选择技术框架/库--用的时候留一个心眼就行：<br/> - Bootstrap (>=ie8)<br/> - jQuery 1.~ (>=ie6), jQuery 2.~ (>=ie9)<br/> - Vue (>= ie9)<br/> - ...
+							<br/> -- 根据兼容需求选择兼容工具(html5shiv.js、respond.js、css reset、normalize.css、Modernizr)
+							<br />-- postCSS
+							<br />-- 一些老的技术手段，如：条件注释（处理 IE 的方式）、CSS Hack、js 能力检测做一些修补
+							<br /><br />③-1 条件注释
+							<br />条件注释 (conditional comment) 是于HTML源码中被IE有条件解释的语句。条件注释可被用来向IE提供及隐藏代码。
+							<br />
+							<div class="democolor">
+								项目： 范例： 说明：
+								<br />! [if !IE] 非IE
+								<br />lt [if lt IE 5.5] 小于IE 5.5
+								<br />lte [if lte IE 6] 小于等于IE6
+								<br />gt [if gt IE 5] 大于IE5
+								<br />gte [if gte IE 7] 大于等于IE7
+								<br />\ [if (IE 6)\(IE 7)] IE6或者IE7
+							</div>
+							<h3>二，常见兼容情况</h3>
+							<div class="democolor">
+								<br/>inline-block >=ie8
+								<br/>min-width/min-height >=ie8
+								<br/>::before, ::after >=ie8
+								<br/>div:hover >=ie7
+								<br/>inline-block >=ie8
+								<br/>background-size >=ie9
+								<br/>圆角 >=ie9
+								<br/>阴影 >=ie9
+								<br/>动画/渐变 >=ie10
+							</div>
+							<h3>三，常见兼容处理范例</h3> 1,
+							<br />
+							<div class="democolor">
+
+								<br />.clearfix:after {
+								<br /> content: '';
+								<br />display: block;
+								<br /> clear: both;
+								<br />}
+								<br />.clearfix {
+								<br /> *zoom: 1; /* 仅对ie67有效 */
+								<br />}
+							</div>
+							2,
+							<br />
+							<div class="democolor">
+								<br />.target{
+								<br /> display: inline-block;
+								<br />*display: inline;
+								<br /> *zoom: 1;
+								<br />}
+							</div>
+							3,
+							<br />
+							<div class="democolor" style="background-image: url(../../img/demo.png); width: 683px;height: 240px;">
+
+							</div>
+							<h3>处理兼容工具</h3>
+							<div>
+								<strong>1. 条件注释</strong>
+
+								<br/>条件注释 (conditional comment) 是于 HTML 源码中被IE有条件解释的语句。条件注释可被用来向 IE 提供及隐藏代码。
+
+								<br/>条件注释最初于微软的 Internet Explorer 5 浏览器中出现，并且直至 Internet Explorer 9 均支持。微软已宣布于 IE10 停止支持。
+
+								<br/><strong>2. IE Hack</strong>
+
+								<br/>针对 IE 浏览器编写不同的 CSS 的让 IE 能够正常渲染的过程。
+
+								<br/><strong>3. js 能力检测</strong>
+
+								<br/>使用 JS 的语法检测浏览器支持的属性，以便展示效果。
+
+								<br/><strong>4. html5shiv.js</strong>
+
+								<br/>用于解决 IE9 以下版本浏览器对 HTML5 新增标签不识别，并导致 CSS 不起作用的问题。所以我们在使用过程中，想要让低版本的浏览器，即 IE9 以下的浏览器支持，那么这款 html5shiv.js 是一个非常好的选择！
+
+								<br/><strong>5. respond.js</strong>
+
+								<br/>Respond.js 是一个小脚本，用于为 IE6-8 以及其它不支持 CSS3 媒体查询功能的浏览器提供媒体查询的 min-width 和 max-width 特性，实现响应式网页设计。
+
+								<br/><strong>6. css reset</strong>
+
+								<br/>将浏览器的默认样式全部去掉，更准确说就是通过重新定义标签样式，“覆盖”浏览器的 CSS 默认属性。
+
+								<br/><strong>7. normalize.css</strong>
+
+								<br/>Normalize.css 只是一个很小的 CSS 文件，但它在默认的 HTML 元素样式上提供了跨浏览器的高度一致性。相比于传统的 CSS reset，Normalize.css 是一种现代的、为 HTML5 准备的优质替代方案。Normalize.css 是一个可以定制的 CSS 文件，它让不同的浏览器在渲染网页元素的时候形式更统一。
+
+								<br/>它可以：
+
+								<br/>· 保留有用的默认值，不同于许多 CSS reset 的简单粗暴全部抹掉；
+
+								<br/>· 标准化的样式，适用范围广的元素；
+
+								<br/>· 纠正错误和常见的浏览器的不一致性；
+
+								<br/> 一些细微的改进，提高了易用性；
+
+								<br/>· 使用详细的注释来解释代码。
+
+								<br/><strong>8. Modernizr</strong>
+
+								<br/>Modernizr 是一个 JavaScript 库，用于检测用户浏览器的 HTML5 与 CSS3 特性。
+
+								<br/>Modernizr 使你可以方便地为各种情况编写 JavaScript 和 CSS，无论浏览器是否支持这些特性。这是处理渐进增强的完美方案。
+
+								<br/>Modernizr 会在页面加载后立即检测特性，然后创建一个包含检测结果的 JavaScript 对象，同时在 html 元素加入方便你调整 CSS 的 class 名。
+
+								<br/><strong>9. postCSS</strong>
+
+								<br/>它可以被理解为一个平台，可以让一些插件在上面跑，它提供了一个解析器，可以将 CSS 解析成抽象语法树，通过 PostCSS 这个平台，我们能够开发一些插件来处理 CSS。热门插件如 autoprefixer，它可以帮我们处理兼容问题，只需正常写 CSS，autoprefixer 可以帮我们自动生成兼容性代码。
+
+							</div>
+							<br /><br />
+							<div style="font-family: STXingkai; float: right;">---lgn
+							<br />喜欢请收藏
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

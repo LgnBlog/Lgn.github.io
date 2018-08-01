@@ -1,0 +1,123 @@
+.navbar-header .logo{
+	font-size: 25px;
+	font-family: STXingkai;
+}
+/*背景适应任何屏幕*/
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	background-color: #b6b4a8; no-repeat;
+	background-size: 100%;
+}
+.panel-login{
+	margin-top: 0px;
+}
+.my-col-12{
+	padding: 0px;
+}
+.famousP{
+	line-height: 30px;
+	font-size: 18px;
+	margin: 30px 20px;
+	font-family: STXingkai;
+}
+#lgn{
+	float: right;
+}
+#sidebar{
+	position: absolute;
+	z-index: 99;
+	right: 15px;
+	top: -900px;
+	transition: top 0.5s;
+}
+li strong{
+	font-size: 18px;
+}
+
+#hdright{
+	font-family: STXingkai;
+	word-spacing: 2px;
+	font-size: 18px;
+}
+.mask{
+	display: none;
+	position:fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.4);
+	z-index: 50;
+}
+/***************图片轮播******************/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.ig{
+	position: absolute; 
+	
+}
+#igs img{
+	width: 100%;
+}
+.but{
+	position: absolute;
+	height: 100px;
+	width: 60px;
+	background: rgba(0,0,0,0.5);
+	color: #f3f7e9;
+	font-size: 40px;
+	text-align: center;
+	line-height: 90px;
+    top: 200px;
+    z-index: 100;
+}
+.but2{
+	left: 818px;
+}
+#tabs{
+	position: absolute;
+	top: 440px;
+	left: 350px;
+}
+.tab{
+	width: 30px;
+	height: 30px;
+	background-color: #5388e8;
+	float: left;
+	margin-left: 10px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 100%;/*使得图标变成圆形*/
+	cursor: pointer;/*使得鼠标放上去之后是一个手形状*/
+}
+.bg{
+	background-color: red;
+}
+/***************图片轮播******************/
+/*sidebar内容部分样式*/
+#box2{
+	background-color: #FFFFFF;
+}
+#box2 #head{
+	margin: 0 auto;
+	text-align: center;
+	width: 953px;
+	height: 269px;
+	background-image: url(../img/jianrong.jpg);
+	z-index: 2;
+}
+#box2 #content{
+	font-size: 17px;
+	line-height: 28px;
+
+}
+/*sidebar内容部分样式*/
+.democolor{
+	background-color: #BCE8F1;
+}

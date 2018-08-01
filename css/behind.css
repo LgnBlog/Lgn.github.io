@@ -1,0 +1,16 @@
+body{
+	background-color: #C9E2B3;
+}
+.img{
+	width: 300px;
+	height: 200px; 
+	border-radius: 30px; 
+	background-color: #31B0D5;
+	margin: 50px auto;text-align: center;
+	line-height: 200px;	
+	font-family:STXingkai;
+	font-size: 30px;
+}
+.img a{
+	text-decoration: none;
+}
