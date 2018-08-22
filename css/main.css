@@ -10,22 +10,37 @@ html,body{
 body{
 	background-color: #b6b4a8; no-repeat;
 	background-size: 100%;
+	
+}
+.container{
+	width: 1190px;
+	height: 615px;
+	background-color: #333;
+	overflow: hidden;
 }
 .panel-login{
 	margin-top: 0px;
+	width: 265px;
+	height: 242px;
 }
 .my-col-12{
 	padding: 0px;
 }
+#image{
+	width: 880px;
+	height: 532px;
+	margin-left: 6px;
+}
 .famousP{
 	background-color: #d4cdb5;
-	width: 260px;
+	width: 262px;
 	height: 242px;
 	padding: 20px;
 	line-height: 30px;
 	font-size: 18px;
 	margin: 30px 2px;
 	font-family: STXingkai;
+	border-radius: 5px;
 }
 #lgn{
 	float: right;
