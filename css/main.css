@@ -7,7 +7,6 @@ html,body{
 	height: 100%;
 	width: 100%;
 }
-
 body{
 	background-color: #b6b4a8; no-repeat;
 	background-size: 100%;
@@ -19,9 +18,13 @@ body{
 	padding: 0px;
 }
 .famousP{
+	background-color: #d4cdb5;
+	width: 260px;
+	height: 242px;
+	padding: 20px;
 	line-height: 30px;
 	font-size: 18px;
-	margin: 30px 20px;
+	margin: 30px 2px;
 	font-family: STXingkai;
 }
 #lgn{
@@ -33,6 +36,7 @@ body{
 	right: 15px;
 	top: -900px;
 	transition: top 0.5s;
+	width: 210px;
 }
 li strong{
 	font-size: 18px;
@@ -116,6 +120,7 @@ li strong{
 #box2 #content{
 	font-size: 17px;
 	line-height: 28px;
+	
 
 }
 /*sidebar内容部分样式*/
