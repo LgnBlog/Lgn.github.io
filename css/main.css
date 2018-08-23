@@ -8,17 +8,22 @@ html,body{
 	width: 100%;
 }
 body{
+	
 	background-color: #b6b4a8; no-repeat;
 	background-size: 100%;
 	
 }
-.container{
+.nav1{
+	overflow: hidden;
 	width: 1190px;
 	height: 615px;
 	background-color: #333;
-	overflow: hidden;
+}
+#login{
+    margin-left: 12px;
 }
 .panel-login{
+	
 	margin-top: 0px;
 	width: 265px;
 	height: 242px;
